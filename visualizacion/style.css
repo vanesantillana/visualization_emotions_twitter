@@ -1,0 +1,112 @@
+body {
+    font: 10px sans-serif;
+  }
+  
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  
+  .bar {
+    fill: orange;
+  }
+  
+  .solidArc:hover {
+    fill: orangered ;
+  }
+  
+  .solidArc {
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  
+  .x.axis path {
+    display: none;
+  }
+  
+  .aster-score { 
+    line-height: 1;
+    font-weight: bold;
+    font-size: 500%;
+  }
+  
+  .d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+  }
+  
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+  
+  /* Style northward tooltips differently */
+  .d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+
+  .highcharts-tooltip h3 {
+    margin: 0.3em 0;
+}
+
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 12px;
+        line-height: 1.428571429;
+        border-radius: 15px;
+      }
+      .btn-circle.btn-lg {
+        width: 50px;
+        height: 50px;
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.33;
+        border-radius: 25px;
+      }
+      .btn-circle.btn-xl {
+        width: 200px;
+        height: 200px;
+        padding: 10px 16px;
+        font-size: 24px;
+        line-height: 1.33;
+        border-radius: 350px;
+      }
+      .btn-circle.btn-xl:hover {
+        width: 250px;
+        height: 250px;
+      }
+      .titu{
+        text-align: center; margin: 10% 0 5% 0;
+        font-family:verdana;
+        font-size: 20px;
+        font-style: italic;
+      }
+      body { 
+        background: url('web.jpg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+  

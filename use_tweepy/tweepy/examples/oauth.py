@@ -1,4 +1,5 @@
 from __future__ import absolute_import, print_function
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 import tweepy
 from datetime import timedelta
@@ -13,14 +14,17 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-
+my_list = []
+horas =[]
 for tweet in tweepy.Cursor(api.search,
-                           q='hola',
+                           q='happy',
                            rpp=5,
                            result_type="recent",
                            include_entities=True,
-                           lang="en").items(10):
-    print(tweet.created_at, " -- ", tweet.text.encode("utf-8"))
+                           lang="en").items(400):
+    my_list.append(str(tweet.text.encode("utf-8"))[2:-1])
+    horas.append(tweet.created_at)
+    #print(tweet.created_at, " -- ", tweet.text.encode("utf-8"))
 
 '''
 for status in tweepy.Cursor(api.search,
@@ -38,3 +42,21 @@ for status in tweepy.Cursor(api.search,
     print(edt_time, " --- ",status.user.name, status.text.encode("utf-8"))
 
 '''
+analyzer = SentimentIntensityAnalyzer()
+import csv
+with open('../../../ANEW/result/sentimiento1.csv', 'w', encoding='utf-8') as csvfile:
+    sentiment_writer = csv.writer(csvfile, delimiter=',',
+                            quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    sentiment_writer.writerow(["Valence", "Negativo","Neutro","Positivo","Creado","Comentario"])
+
+    for sentence,hora in zip(my_list,horas):
+        vs = analyzer.polarity_scores(sentence)
+        sentiment_writer.writerow([
+                                    vs['compound'],
+                                    vs['neg'],
+                                    vs['neu'],
+                                    vs['pos'],
+                                    hora,
+                                    sentence])
+        print(sentence,vs,"\n")
+        #print("{:-<65} {}".format(sentence, str(vs)).encode("utf-8"))

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VIS Emotion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <style>
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 12px;
+        line-height: 1.428571429;
+        border-radius: 15px;
+      }
+      .btn-circle.btn-lg {
+        width: 50px;
+        height: 50px;
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.33;
+        border-radius: 25px;
+      }
+      .btn-circle.btn-xl {
+        width: 200px;
+        height: 200px;
+        padding: 10px 16px;
+        font-size: 24px;
+        line-height: 1.33;
+        border-radius: 350px;
+      }
+      .btn-circle.btn-xl:hover {
+        width: 250px;
+        height: 250px;
+      }
+      .titu{
+        text-align: center; margin: 10% 0 5% 0;
+        font-family:verdana;
+        font-size: 20px;
+        font-style: italic;
+      }
+      body { 
+        background: url('web.jpg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="titu">Elige entre éstas visualizaciones</p>
+        </div>
+        <div class="col-md-6" style="text-align: center" >
+            <a type="button" href="senticompass.php" class="btn btn-circle btn-xl" style="background-color: #00ffd2">
+                <p style="padding-top: 45%; color: white">SentiCompass</p> 
+            </a>
+        </div>
+        <div class="col-md-6"style="text-align: center">
+            <a type="button" href="emotionwatch.php" class="btn btn-circle btn-xl" style="background-color: #d170db">
+                <p style="padding-top: 45%; color: white">EmotionWatch</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
